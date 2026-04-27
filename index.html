@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evaluación de desempeño y desarrollo del talento COASMEDAS</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <a class="floating-cta" href="https://forms.office.com/Pages/ShareFormPage.aspx?id=8MWdaZbFzEe2IL9URfDE3p9GYt_v-PpGm0agnT2Bf1FUNzVSNFU5U0JIMzJJTjk0M1RLVzlSMllRTC4u&sharetoken=NOTLbypf2KR2mwBdigPg" target="_blank" rel="noopener noreferrer" aria-label="Ir al formulario de evaluación de desempeño">
+    Ingresa aquí y realiza las evaluaciones de desempeño
+  </a>
+
+  <div class="modal-backdrop" id="startupModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head">
+        <div class="eyebrow">Consulta de evaluaciones</div>
+        <h2 id="modalTitle">Ingrese su número de documento de identidad</h2>
+        <p>Consulte las evaluaciones completas y generales asignadas a cada colaborador.</p>
+      </div>
+      <div class="modal-body">
+        <label for="documentInputModal"><strong>Número de documento</strong></label>
+        <div class="modal-row">
+          <div class="field" style="min-width:260px; flex:1 1 280px;">
+            <input id="documentInputModal" type="text" inputmode="numeric" placeholder="Ej. 80189806" autofocus />
+          </div>
+          <button id="searchBtnModal">Consultar</button>
+        </div>
+        <div class="footer-note">Ingresa el número de documento para consultar las personas que evaluarás.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="app">
+    <header class="topbar" aria-label="Encabezado principal">
+      <div class="brand-wrap">
+        <img src="assets/logocoas.png" alt="Logo COASMEDAS" />
+        <div class="brand-copy">
+          <div class="brand-kicker">COASMEDAS · Gestión del talento</div>
+          <div class="brand-title">Evaluación de desempeño y desarrollo del talento COASMEDAS</div>
+        </div>
+      </div>
+      <div class="topbar-note">Coordinación Gestión Humana.</div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="eyebrow">COASMEDAS · Gestión del talento</div>
+        <h1>Evaluación de desempeño y desarrollo del talento COASMEDAS</h1>
+        <p>Plataforma de consulta para identificar, por número de documento, las evaluaciones asignadas a cada colaborador. Se muestran el nombre, el área o grupo evaluativo y los listados separados entre evaluaciones completas y evaluaciones generales.</p>
+        <div class="hero-actions">
+          <a class="hero-link-btn" href="https://forms.office.com/Pages/ShareFormPage.aspx?id=8MWdaZbFzEe2IL9URfDE3p9GYt_v-PpGm0agnT2Bf1FUNzVSNFU5U0JIMzJJTjk0M1RLVzlSMllRTC4u&sharetoken=NOTLbypf2KR2mwBdigPg" target="_blank" rel="noopener noreferrer">Ir al formulario de evaluación</a>
+        </div>
+        <div class="source-note" id="sourceAudit"></div>
+      </div>
+      <div class="hero-card">
+        <div class="label" style="color: rgba(255,255,255,.78);">Registros disponibles</div>
+        <strong id="totalRecords">0</strong>
+        <div style="margin-top:10px; opacity:.93; line-height:1.55;">
+          A continuación podrás consultar dos tipos de evaluaciones: Completa y General. La primera es tu autoevaluación y las persona a cu tacro (si tienes y la segunda es para tus colegas (compañeros de trabajo).
+        </div>
+      </div>
+    </section>
+
+    <main class="content">
+      <section class="lookup-bar card" aria-label="Buscador principal">
+        <label for="documentInput">Ingrese su número de documento de identidad</label>
+        <div class="field">
+          <input id="documentInput" type="text" inputmode="numeric" placeholder="Escriba aquí el documento" />
+        </div>
+        <button id="searchBtn">Consultar</button>
+        <button id="clearBtn" class="secondary">Limpiar</button>
+        <div class="helper">Se mostrará el nombre de la persona, su área o grupo evaluativo, y los listados asociados.</div>
+      </section>
+
+      <div id="status" class="status" aria-live="polite"></div>
+
+      <section class="summary">
+        <article class="card">
+          <div class="label">Nombre del funcionario</div>
+          <div id="nameValue" class="value small">—</div>
+        </article>
+        <article class="card">
+          <div class="label">Área / grupo</div>
+          <div id="areaValue" class="value small">—</div>
+        </article>
+        <article class="card">
+          <div class="label">Cargo</div>
+          <div id="roleValue" class="value small">—</div>
+        </article>
+      </section>
+
+      <section class="tables">
+        <article class="card">
+          <div class="panel-title">
+            <h2>Evaluaciones completas</h2>
+            <span id="completeCount" class="badge">0 asignadas</span>
+          </div>
+          <div id="completeContainer"></div>
+        </article>
+        <article class="card">
+          <div class="panel-title">
+            <h2>Evaluaciones generales</h2>
+            <span id="generalCount" class="badge">0 asignadas</span>
+          </div>
+          <div id="generalContainer"></div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/hoja1.js"></script>
+  <script src="js/hoja1_2.js"></script>
+  <script src="js/hoja2.js"></script>
+  <script src="js/hoja3.js"></script>
+  <script src="js/app_data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
